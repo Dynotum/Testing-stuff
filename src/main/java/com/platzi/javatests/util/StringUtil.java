@@ -13,6 +13,7 @@ public class StringUtil {
         if (times < 0) {
             throw new IllegalArgumentException("Sorry bro. Only positive numbers allowed.");
         }
+
         if (times == 0) {
             return str;
         }

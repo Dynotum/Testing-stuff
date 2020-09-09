@@ -1,7 +1,8 @@
 package com.platzi.javatests.util;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class StringUtilTest {
 
@@ -10,20 +11,18 @@ public class StringUtilTest {
     @Test
     public void testRepeat() {
         final String result = stringUtil.repeat("hello", 3);
-        Assert.assertEquals("hellohellohello", result);
+        assertEquals("hellohellohello", result);
     }
 
     @Test
     public void testZeroTimes() {
         final String result = stringUtil.repeat("hello", 0);
-        Assert.assertEquals("hello", result);
+        assertEquals("hello", result);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void negativeTimes() {
-        final String result = stringUtil.repeat("hello", -2);
-        Assert.assertEquals("hello", result);
+        assertThrows(IllegalArgumentException.class, () -> stringUtil.repeat("hello", -2), "hello");
     }
-
 
 }
