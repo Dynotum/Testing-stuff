@@ -25,4 +25,11 @@ public class StringUtil {
 
         return sb.toString();
     }
+
+    public boolean isEmpty(String string) {
+        if (string == null) {
+            return true; // depend on the project
+        }
+        return string.trim().isEmpty();
+    }
 }

@@ -25,4 +25,25 @@ public class StringUtilTest {
         assertThrows(IllegalArgumentException.class, () -> stringUtil.repeat("hello", -2), "hello");
     }
 
+    @Test
+    public void isEmpty() {
+        assertTrue(stringUtil.isEmpty(""));
+    }
+
+    @Test
+    public void isEmptyWithSpaces() {
+        assertTrue(stringUtil.isEmpty(" "));
+    }
+
+    @Test
+    public void isNotEmpty() {
+        assertFalse(stringUtil.isEmpty("dyno"));
+    }
+
+
+    @Test
+    public void isNotNull() {
+        assertTrue(stringUtil.isEmpty(null));
+    }
+
 }
